@@ -14,11 +14,6 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
 
 ## 目录
 
-
-
-# Summary
-
-* [读我](README.md)
 * [goebpf](docs/goebpf.md)
 * [libbpf](docs/libbpf.md)
 * [bcc](docs/bcc.md)

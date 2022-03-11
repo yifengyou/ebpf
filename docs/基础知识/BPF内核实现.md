@@ -652,7 +652,6 @@ union bpf_attr {
 BPF verifier总体代码流程如下：
 
 ```
-
 int bpf_check(struct bpf_prog **prog, union bpf_attr *attr,
           union bpf_attr __user *uattr)
 {

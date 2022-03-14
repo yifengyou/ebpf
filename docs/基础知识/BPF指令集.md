@@ -197,6 +197,7 @@ BPF_STMT(BPF_MISC | BPF_TXA)                A <- X      // 将X中的值存入A�
 
 * <https://arthurchiao.art/blog/cilium-bpf-xdp-reference-guide-zh/#111-%E6%8C%87%E4%BB%A4%E9%9B%86>
 * <https://www.kernel.org/doc/Documentation/networking/filter.txt>
+* <https://github.com/iovisor/bpf-docs/blob/master/eBPF.md>
 
 
 

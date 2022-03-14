@@ -5,6 +5,8 @@
     * [clang与llvm](docs/基础知识/clang与llvm.md)
     * [BPF内核实现](docs/基础知识/BPF内核实现.md)
     * [BPF指令集](docs/基础知识/BPF指令集.md)
+    * [JIT即时编译](docs/基础知识/JIT即时编译.md)
+    * [llvm对ebpf的支持](docs/基础知识/llvm对ebpf的支持.md)
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)
 * [tracee](docs/tracee.md)

@@ -7,6 +7,9 @@
     * [BPF指令集](docs/基础知识/BPF指令集.md)
     * [JIT即时编译](docs/基础知识/JIT即时编译.md)
     * [llvm对ebpf的支持](docs/基础知识/llvm对ebpf的支持.md)
+* [CVE漏洞](docs/CVE漏洞.md)
+    * [CVE-2021-31440](docs/CVE漏洞/CVE-2021-31440.md)
+    * [CVE-2021-3489](docs/CVE漏洞/CVE-2021-3489.md)
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)
 * [tracee](docs/tracee.md)
@@ -132,4 +135,3 @@
     * [wakeuptime](docs/bcc/wakeuptime.md)
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
-

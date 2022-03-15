@@ -20,7 +20,7 @@
         * [sched_cls](docs/BPF子系统/filter/sched_cls.md)
         * [sched_act](docs/BPF子系统/filter/sched_act.md)
         * [xdp](docs/BPF子系统/filter/xdp.md)
-        * [cg_skb](docg_skbcs/BPF子系统/filter/xdp.md)
+        * [cg_skb](docs/BPF子系统/filter/xdp.md)
 * [BPF辅助函数](docs/BPF辅助函数.md)
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)

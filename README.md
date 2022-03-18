@@ -23,6 +23,8 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
 * [CVE漏洞](docs/CVE漏洞.md)
     * [CVE-2021-31440](docs/CVE漏洞/CVE-2021-31440.md)
     * [CVE-2021-3489](docs/CVE漏洞/CVE-2021-3489.md)
+* [bpftrace](docs/bpftrace.md)
+  * [举栗子](docs/bpftrace/举栗子.md)
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)
 * [tracee](docs/tracee.md)
@@ -161,8 +163,6 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
 ## 参考
 
 * <https://zhuanlan.zhihu.com/p/470680443>
-
-
 
 
 ---

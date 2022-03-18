@@ -10,6 +10,8 @@
 * [CVE漏洞](docs/CVE漏洞.md)
     * [CVE-2021-31440](docs/CVE漏洞/CVE-2021-31440.md)
     * [CVE-2021-3489](docs/CVE漏洞/CVE-2021-3489.md)
+* [bpftrace](docs/bpftrace.md)
+    * [举栗子](docs/bpftrace/举栗子.md)
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)
 * [tracee](docs/tracee.md)
@@ -135,3 +137,4 @@
     * [wakeuptime](docs/bcc/wakeuptime.md)
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
+

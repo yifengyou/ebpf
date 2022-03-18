@@ -10,10 +10,8 @@
 * [CVE漏洞](docs/CVE漏洞.md)
     * [CVE-2021-31440](docs/CVE漏洞/CVE-2021-31440.md)
     * [CVE-2021-3489](docs/CVE漏洞/CVE-2021-3489.md)
-<<<<<<< HEAD
 * [bpftrace](docs/bpftrace.md)
     * [举栗子](docs/bpftrace/举栗子.md)
-=======
 * [BPF子系统](docs/BPF子系统.md)
     * [tracing](docs/BPF子系统/tracing.md)
         * [kprobe](docs/BPF子系统/tracing/kprobe.md)
@@ -26,7 +24,6 @@
         * [xdp](docs/BPF子系统/filter/xdp.md)
         * [cg_skb](docs/BPF子系统/filter/xdp.md)
 * [BPF辅助函数](docs/BPF辅助函数.md)
->>>>>>> cc11989472b6d42a539675ae1719e9314e8432ef
 * [kubeArmor](docs/kubeArmor.md)
 * [falco](docs/falco.md)
 * [tracee](docs/tracee.md)
@@ -152,4 +149,3 @@
     * [wakeuptime](docs/bcc/wakeuptime.md)
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
-

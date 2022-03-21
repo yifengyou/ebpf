@@ -9,6 +9,7 @@
     * [llvm对ebpf的支持](docs/基础知识/llvm对ebpf的支持.md)
     * [tracepoint](docs/基础知识/tracepoint.md)
     * [ustd](docs/基础知识/ustd.md)
+    * [dtrace](docs/基础知识/dtrace.md)
     * [kprobe与kretprobe](docs/基础知识/kprobe与kretprobe.md)
     * [uprobe与uretprobe](docs/基础知识/uprobe与uretprobe.md)
 * [CVE漏洞](docs/CVE漏洞.md)

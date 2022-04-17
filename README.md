@@ -166,7 +166,6 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
 
-
 ## 相关站点
 
 * <https://ebpf.io/>
@@ -195,6 +194,6 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
 
 ![20220314_211412_47](image/20220314_211412_47.png)
 
-![20220321_104048_85](image/20220321_104048_85.png) 
+![20220321_104048_85](image/20220321_104048_85.png)
 
 ---

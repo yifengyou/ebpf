@@ -165,6 +165,11 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [wakeuptime](docs/bcc/wakeuptime.md)
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
+* [公开课](docs/公开课.md)
+    * [eBPF学习路线分享与LMP项目介绍](docs/公开课/eBPF学习路线分享与LMP项目介绍.md)
+* [中国eBPF大会](docs/中国eBPF大会.md)
+  - [观测内核行为的若干示例](docs/中国eBPF大会/观测内核行为的若干示例.md)
+
 
 ## 相关站点
 

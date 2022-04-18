@@ -156,4 +156,5 @@
     * [wakeuptime](docs/bcc/wakeuptime.md)
     * [xfsdist](docs/bcc/xfsdist.md)
     * [xfsslower](docs/bcc/xfsslower.md)
-
+* [公开课](docs/公开课.md)
+    * [eBPF学习路线分享与LMP项目介绍](docs/公开课/eBPF学习路线分享与LMP项目介绍.md)

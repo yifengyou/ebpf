@@ -1,0 +1,46 @@
+From bb121e49b1a05e86c88274a89f5229b4ec6939c6 Mon Sep 17 00:00:00 2001
+From: Yonghong Song <yhs@fb.com>
+Date: Tue, 25 May 2021 19:58:00 -0700
+Subject: [PATCH 2/2] Fix a llvm compilation error
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Current llvm trunk (https://github.com/llvm/llvm-project)
+will cause the following compilation errors:
+  /home/yhs/work/bcc/src/cc/bcc_debug.cc: In member function ‘void ebpf::SourceDebugger::dump()’:
+  /home/yhs/work/bcc/src/cc/bcc_debug.cc:135:75: error: no matching function for call to
+     ‘llvm::MCContext::MCContext(llvm::Triple&, std::unique_ptr<llvm::MCAsmInfo>::pointer,
+      std::unique_ptr<llvm::MCRegisterInfo>::pointer, llvm::MCObjectFileInfo*,
+      std::unique_ptr<llvm::MCSubtargetInfo>::pointer, std::nullptr_t)’
+     MCContext Ctx(TheTriple, MAI.get(), MRI.get(), &MOFI, STI.get(), nullptr);
+                                                                             ^
+     ......
+
+This is because upstream patch https://reviews.llvm.org/D101921
+refactored MCObjectFileInfo initialization and changed MCContext
+constructor signature.
+
+This patch fixed the issue by following the new code patterns
+in https://reviews.llvm.org/D101921.
+---
+ src/cc/bcc_debug.cc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/cc/bcc_debug.cc b/src/cc/bcc_debug.cc
+index 775c9141..97d6d95b 100644
+--- a/src/cc/bcc_debug.cc
++++ b/src/cc/bcc_debug.cc
+@@ -132,7 +132,8 @@ void SourceDebugger::dump() {
+       T->createMCSubtargetInfo(TripleStr, "", ""));
+   MCObjectFileInfo MOFI;
+ #if LLVM_MAJOR_VERSION >= 13
+-  MCContext Ctx(TheTriple, MAI.get(), MRI.get(), &MOFI, STI.get(), nullptr);
++  MCContext Ctx(TheTriple, MAI.get(), MRI.get(), STI.get(), nullptr);
++  Ctx.setObjectFileInfo(&MOFI);
+   MOFI.initMCObjectFileInfo(Ctx, false, false);
+ #else
+   MCContext Ctx(MAI.get(), MRI.get(), &MOFI, nullptr);
+-- 
+2.31.1
+

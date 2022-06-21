@@ -1,0 +1,110 @@
+From c610314e8f8265317bf54ef518df48809834feba Mon Sep 17 00:00:00 2001
+From: Jerome Marchand <jmarchan@redhat.com>
+Date: Thu, 14 Oct 2021 12:01:01 +0200
+Subject: [PATCH] Handle renaming of task_struct_>state field on RHEL 9
+
+There has been some cleanup of task_struct's state field and to catch
+any place that has been missed in the conversion, it has been renamed
+__state.
+---
+ tools/cpudist.py     | 2 +-
+ tools/offcputime.py  | 4 ++--
+ tools/offwaketime.py | 4 ++--
+ tools/runqlat.py     | 4 ++--
+ tools/runqslower.py  | 4 ++--
+ 5 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/tools/cpudist.py b/tools/cpudist.py
+index eb04f590..ba36ba76 100755
+--- a/tools/cpudist.py
++++ b/tools/cpudist.py
+@@ -101,7 +101,7 @@ int sched_switch(struct pt_regs *ctx, struct task_struct *prev)
+     u32 tgid = pid_tgid >> 32, pid = pid_tgid;
+ 
+ #ifdef ONCPU
+-    if (prev->state == TASK_RUNNING) {
++    if (prev->__state == TASK_RUNNING) {
+ #else
+     if (1) {
+ #endif
+diff --git a/tools/offcputime.py b/tools/offcputime.py
+index 128c6496..b93e78d2 100755
+--- a/tools/offcputime.py
++++ b/tools/offcputime.py
+@@ -205,10 +205,10 @@ thread_context = ""
+     thread_context = "all threads"
+     thread_filter = '1'
+ if args.state == 0:
+-    state_filter = 'prev->state == 0'
++    state_filter = 'prev->__state == 0'
+ elif args.state:
+     # these states are sometimes bitmask checked
+-    state_filter = 'prev->state & %d' % args.state
++    state_filter = 'prev->__state & %d' % args.state
+ else:
+     state_filter = '1'
+ bpf_text = bpf_text.replace('THREAD_FILTER', thread_filter)
+diff --git a/tools/offwaketime.py b/tools/offwaketime.py
+index 753eee97..722c0381 100755
+--- a/tools/offwaketime.py
++++ b/tools/offwaketime.py
+@@ -254,10 +254,10 @@ int oncpu(struct pt_regs *ctx, struct task_struct *p) {
+ else:
+     thread_filter = '1'
+ if args.state == 0:
+-    state_filter = 'p->state == 0'
++    state_filter = 'p->__state == 0'
+ elif args.state:
+     # these states are sometimes bitmask checked
+-    state_filter = 'p->state & %d' % args.state
++    state_filter = 'p->__state & %d' % args.state
+ else:
+     state_filter = '1'
+ bpf_text = bpf_text.replace('THREAD_FILTER', thread_filter)
+diff --git a/tools/runqlat.py b/tools/runqlat.py
+index b13ff2d1..8e443c3c 100755
+--- a/tools/runqlat.py
++++ b/tools/runqlat.py
+@@ -116,7 +116,7 @@ int trace_run(struct pt_regs *ctx, struct task_struct *prev)
+     u32 pid, tgid;
+ 
+     // ivcsw: treat like an enqueue event and store timestamp
+-    if (prev->state == TASK_RUNNING) {
++    if (prev->__state == TASK_RUNNING) {
+         tgid = prev->tgid;
+         pid = prev->pid;
+         if (!(FILTER || pid == 0)) {
+@@ -170,7 +170,7 @@ RAW_TRACEPOINT_PROBE(sched_switch)
+     u32 pid, tgid;
+ 
+     // ivcsw: treat like an enqueue event and store timestamp
+-    if (prev->state == TASK_RUNNING) {
++    if (prev->__state == TASK_RUNNING) {
+         tgid = prev->tgid;
+         pid = prev->pid;
+         if (!(FILTER || pid == 0)) {
+diff --git a/tools/runqslower.py b/tools/runqslower.py
+index 6df98d9f..ba71e5d3 100755
+--- a/tools/runqslower.py
++++ b/tools/runqslower.py
+@@ -112,7 +112,7 @@ int trace_run(struct pt_regs *ctx, struct task_struct *prev)
+     u32 pid, tgid;
+ 
+     // ivcsw: treat like an enqueue event and store timestamp
+-    if (prev->state == TASK_RUNNING) {
++    if (prev->__state == TASK_RUNNING) {
+         tgid = prev->tgid;
+         pid = prev->pid;
+         u64 ts = bpf_ktime_get_ns();
+@@ -178,7 +178,7 @@ RAW_TRACEPOINT_PROBE(sched_switch)
+     long state;
+ 
+     // ivcsw: treat like an enqueue event and store timestamp
+-    bpf_probe_read_kernel(&state, sizeof(long), (const void *)&prev->state);
++    bpf_probe_read_kernel(&state, sizeof(long), (const void *)&prev->__state);
+     if (state == TASK_RUNNING) {
+         bpf_probe_read_kernel(&tgid, sizeof(prev->tgid), &prev->tgid);
+         bpf_probe_read_kernel(&pid, sizeof(prev->pid), &prev->pid);
+-- 
+2.31.1
+

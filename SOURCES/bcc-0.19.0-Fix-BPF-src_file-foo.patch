@@ -1,0 +1,39 @@
+From 9051043a126a838902b88d144eea1b631d2c3eef Mon Sep 17 00:00:00 2001
+From: Jerome Marchand <jmarchan@redhat.com>
+Date: Tue, 27 Apr 2021 15:13:12 +0200
+Subject: [PATCH] Fix BPF(src_file="foo")
+
+Since commit 75f20a15 ("Use string type for comparison to PATH
+elements"), src_file isn't working anymore. Somehow, two wrongs
+(ArgString __str__() returning a bytes object and joining a bytes and
+what was supposed to be a string) did make a right.
+
+It fixes the following error in netqtop and deadlock:
+Traceback (most recent call last):
+  File "/usr/share/bcc/tools/netqtop", line 207, in <module>
+    b = BPF(src_file = EBPF_FILE)
+  File "/usr/lib/python3.6/site-packages/bcc/__init__.py", line 335, in __init__
+    src_file = BPF._find_file(src_file)
+  File "/usr/lib/python3.6/site-packages/bcc/__init__.py", line 255, in _find_file
+    t = b"/".join([os.path.abspath(os.path.dirname(argv0.__str__())), filename])
+TypeError: sequence item 0: expected a bytes-like object, str found
+---
+ src/python/bcc/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/python/bcc/__init__.py b/src/python/bcc/__init__.py
+index 90562cd7..eabe0a55 100644
+--- a/src/python/bcc/__init__.py
++++ b/src/python/bcc/__init__.py
+@@ -252,7 +252,7 @@ DEBUG_BTF = 0x20
+         if filename:
+             if not os.path.isfile(filename):
+                 argv0 = ArgString(sys.argv[0])
+-                t = b"/".join([os.path.abspath(os.path.dirname(argv0.__str__())), filename])
++                t = b"/".join([os.path.abspath(os.path.dirname(argv0.__bytes__())), filename])
+                 if os.path.isfile(t):
+                     filename = t
+                 else:
+-- 
+2.30.2
+

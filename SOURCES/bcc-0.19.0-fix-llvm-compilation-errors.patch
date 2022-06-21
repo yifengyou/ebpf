@@ -1,0 +1,42 @@
+From d74c96d9423652d4467339ee24bb6db2e5df21cb Mon Sep 17 00:00:00 2001
+From: Yonghong Song <yhs@fb.com>
+Date: Wed, 5 May 2021 19:11:13 -0700
+Subject: [PATCH 1/2] fix llvm compilation errors
+
+MCContext and InitMCObjectFileInfo name/signatures
+are changed due to upstream patch
+  https://reviews.llvm.org/D101462
+Adjust related codes in bcc_debug.cc properly to resolve
+the compilation error for llvm13.
+
+Signed-off-by: Yonghong Song <yhs@fb.com>
+---
+ src/cc/bcc_debug.cc | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/src/cc/bcc_debug.cc b/src/cc/bcc_debug.cc
+index 371b6ad3..775c9141 100644
+--- a/src/cc/bcc_debug.cc
++++ b/src/cc/bcc_debug.cc
+@@ -128,11 +128,16 @@ void SourceDebugger::dump() {
+     return;
+   }
+ 
++  std::unique_ptr<MCSubtargetInfo> STI(
++      T->createMCSubtargetInfo(TripleStr, "", ""));
+   MCObjectFileInfo MOFI;
++#if LLVM_MAJOR_VERSION >= 13
++  MCContext Ctx(TheTriple, MAI.get(), MRI.get(), &MOFI, STI.get(), nullptr);
++  MOFI.initMCObjectFileInfo(Ctx, false, false);
++#else
+   MCContext Ctx(MAI.get(), MRI.get(), &MOFI, nullptr);
+   MOFI.InitMCObjectFileInfo(TheTriple, false, Ctx, false);
+-  std::unique_ptr<MCSubtargetInfo> STI(
+-      T->createMCSubtargetInfo(TripleStr, "", ""));
++#endif
+ 
+   std::unique_ptr<MCInstrInfo> MCII(T->createMCInstrInfo());
+   MCInstPrinter *IP = T->createMCInstPrinter(TheTriple, 0, *MAI, *MCII, *MRI);
+-- 
+2.31.1
+

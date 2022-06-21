@@ -1,0 +1,1439 @@
+From f4e66f50d1af5b5dd0dc1dbb261f911514c465ed Mon Sep 17 00:00:00 2001
+From: Jerome Marchand <jmarchan@redhat.com>
+Date: Tue, 6 Aug 2019 14:44:33 +0200
+Subject: [PATCH] Manpages: remove unstable statement
+
+The tools are tested before each release. They should be stable
+enough.
+---
+ man/man8/argdist.8        | 2 --
+ man/man8/bashreadline.8   | 2 --
+ man/man8/bindsnoop.8      | 2 --
+ man/man8/biolatency.8     | 2 --
+ man/man8/biolatpcts.8     | 2 --
+ man/man8/biosnoop.8       | 2 --
+ man/man8/biotop.8         | 2 --
+ man/man8/bitesize.8       | 2 --
+ man/man8/bpflist.8        | 2 --
+ man/man8/bps.8            | 2 --
+ man/man8/btrfsdist.8      | 2 --
+ man/man8/btrfsslower.8    | 2 --
+ man/man8/cachestat.8      | 2 --
+ man/man8/cachetop.8       | 2 --
+ man/man8/capable.8        | 2 --
+ man/man8/compactsnoop.8   | 2 --
+ man/man8/cpudist.8        | 2 --
+ man/man8/cpuunclaimed.8   | 2 --
+ man/man8/criticalstat.8   | 2 --
+ man/man8/dbslower.8       | 2 --
+ man/man8/dbstat.8         | 2 --
+ man/man8/dcsnoop.8        | 2 --
+ man/man8/dcstat.8         | 2 --
+ man/man8/deadlock.8       | 2 --
+ man/man8/dirtop.8         | 2 --
+ man/man8/drsnoop.8        | 2 --
+ man/man8/execsnoop.8      | 2 --
+ man/man8/exitsnoop.8      | 2 --
+ man/man8/ext4dist.8       | 2 --
+ man/man8/ext4slower.8     | 2 --
+ man/man8/filelife.8       | 2 --
+ man/man8/fileslower.8     | 2 --
+ man/man8/filetop.8        | 2 --
+ man/man8/funccount.8      | 2 --
+ man/man8/funcinterval.8   | 2 --
+ man/man8/funclatency.8    | 2 --
+ man/man8/funcslower.8     | 2 --
+ man/man8/gethostlatency.8 | 2 --
+ man/man8/hardirqs.8       | 2 --
+ man/man8/inject.8         | 4 ----
+ man/man8/killsnoop.8      | 2 --
+ man/man8/klockstat.8      | 2 --
+ man/man8/llcstat.8        | 2 --
+ man/man8/mdflush.8        | 2 --
+ man/man8/memleak.8        | 2 --
+ man/man8/mountsnoop.8     | 2 --
+ man/man8/mysqld_qslower.8 | 2 --
+ man/man8/netqtop.8        | 2 --
+ man/man8/nfsdist.8        | 2 --
+ man/man8/nfsslower.8      | 2 --
+ man/man8/offcputime.8     | 2 --
+ man/man8/offwaketime.8    | 2 --
+ man/man8/oomkill.8        | 2 --
+ man/man8/opensnoop.8      | 2 --
+ man/man8/pidpersec.8      | 2 --
+ man/man8/profile.8        | 2 --
+ man/man8/readahead.8      | 2 --
+ man/man8/reset-trace.8    | 2 --
+ man/man8/runqlat.8        | 2 --
+ man/man8/runqlen.8        | 2 --
+ man/man8/runqslower.8     | 2 --
+ man/man8/shmsnoop.8       | 2 --
+ man/man8/slabratetop.8    | 2 --
+ man/man8/sofdsnoop.8      | 2 --
+ man/man8/softirqs.8       | 2 --
+ man/man8/solisten.8       | 2 --
+ man/man8/spfdsnoop.8      | 2 --
+ man/man8/sslsniff.8       | 2 --
+ man/man8/stackcount.8     | 2 --
+ man/man8/statsnoop.8      | 2 --
+ man/man8/swapin.8         | 2 --
+ man/man8/syncsnoop.8      | 2 --
+ man/man8/syscount.8       | 2 --
+ man/man8/tcpaccept.8      | 2 --
+ man/man8/tcpconnect.8     | 2 --
+ man/man8/tcpconnlat.8     | 2 --
+ man/man8/tcpdrop.8        | 2 --
+ man/man8/tcplife.8        | 2 --
+ man/man8/tcpretrans.8     | 2 --
+ man/man8/tcprtt.8         | 2 --
+ man/man8/tcpstates.8      | 2 --
+ man/man8/tcpsubnet.8      | 2 --
+ man/man8/tcpsynbl.8       | 2 --
+ man/man8/tcptop.8         | 2 --
+ man/man8/tcptracer.8      | 2 --
+ man/man8/threadsnoop.8    | 2 --
+ man/man8/tplist.8         | 2 --
+ man/man8/trace.8          | 2 --
+ man/man8/ttysnoop.8       | 2 --
+ man/man8/ucalls.8         | 2 --
+ man/man8/uflow.8          | 2 --
+ man/man8/ugc.8            | 2 --
+ man/man8/uobjnew.8        | 2 --
+ man/man8/ustat.8          | 2 --
+ man/man8/uthreads.8       | 2 --
+ man/man8/vfscount.8       | 2 --
+ man/man8/vfsstat.8        | 2 --
+ man/man8/virtiostat.8     | 2 --
+ man/man8/wakeuptime.8     | 2 --
+ man/man8/xfsdist.8        | 2 --
+ man/man8/xfsslower.8      | 2 --
+ man/man8/zfsdist.8        | 2 --
+ man/man8/zfsslower.8      | 2 --
+ 103 files changed, 208 deletions(-)
+
+diff --git a/man/man8/argdist.8 b/man/man8/argdist.8
+index 4116cd4d..aa128d2d 100644
+--- a/man/man8/argdist.8
++++ b/man/man8/argdist.8
+@@ -188,7 +188,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+diff --git a/man/man8/bashreadline.8 b/man/man8/bashreadline.8
+index bc68a491..705c514e 100644
+--- a/man/man8/bashreadline.8
++++ b/man/man8/bashreadline.8
+@@ -53,8 +53,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/bindsnoop.8 b/man/man8/bindsnoop.8
+index f8fa1850..05ed95a7 100644
+--- a/man/man8/bindsnoop.8
++++ b/man/man8/bindsnoop.8
+@@ -141,8 +141,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Pavel Dubovitsky
+ .SH SEE ALSO
+diff --git a/man/man8/biolatency.8 b/man/man8/biolatency.8
+index c303eec0..895deb31 100644
+--- a/man/man8/biolatency.8
++++ b/man/man8/biolatency.8
+@@ -98,8 +98,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/biolatpcts.8 b/man/man8/biolatpcts.8
+index 7a06a11d..9dd41d08 100644
+--- a/man/man8/biolatpcts.8
++++ b/man/man8/biolatpcts.8
+@@ -81,8 +81,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Tejun Heo
+ .SH SEE ALSO
+diff --git a/man/man8/biosnoop.8 b/man/man8/biosnoop.8
+index 4c073f76..2b2f7434 100644
+--- a/man/man8/biosnoop.8
++++ b/man/man8/biosnoop.8
+@@ -79,8 +79,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/biotop.8 b/man/man8/biotop.8
+index ed25521f..b00bf68a 100644
+--- a/man/man8/biotop.8
++++ b/man/man8/biotop.8
+@@ -95,8 +95,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH INSPIRATION
+diff --git a/man/man8/bitesize.8 b/man/man8/bitesize.8
+index 99cdbaab..529a1e26 100644
+--- a/man/man8/bitesize.8
++++ b/man/man8/bitesize.8
+@@ -43,8 +43,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Allan McAleavy
+ .SH SEE ALSO
+diff --git a/man/man8/bpflist.8 b/man/man8/bpflist.8
+index 1cab0c81..afefd3af 100644
+--- a/man/man8/bpflist.8
++++ b/man/man8/bpflist.8
+@@ -54,7 +54,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+diff --git a/man/man8/bps.8 b/man/man8/bps.8
+index 4316be0b..8af8ee2d 100644
+--- a/man/man8/bps.8
++++ b/man/man8/bps.8
+@@ -81,7 +81,5 @@ This is from bcc.
+ https://github.com/iovisor/bcc
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Martin Lau
+diff --git a/man/man8/btrfsdist.8 b/man/man8/btrfsdist.8
+index 480264f9..cbf75121 100644
+--- a/man/man8/btrfsdist.8
++++ b/man/man8/btrfsdist.8
+@@ -74,8 +74,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/btrfsslower.8 b/man/man8/btrfsslower.8
+index a1ea106a..33864589 100644
+--- a/man/man8/btrfsslower.8
++++ b/man/man8/btrfsslower.8
+@@ -114,8 +114,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/cachestat.8 b/man/man8/cachestat.8
+index 172194d4..575941fc 100644
+--- a/man/man8/cachestat.8
++++ b/man/man8/cachestat.8
+@@ -76,8 +76,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Allan McAleavy
+ .SH SEE ALSO
+diff --git a/man/man8/cachetop.8 b/man/man8/cachetop.8
+index 5642fa1d..1fe4067b 100644
+--- a/man/man8/cachetop.8
++++ b/man/man8/cachetop.8
+@@ -83,8 +83,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Emmanuel Bretelle
+ .SH SEE ALSO
+diff --git a/man/man8/capable.8 b/man/man8/capable.8
+index 342946f8..2b7d13ba 100644
+--- a/man/man8/capable.8
++++ b/man/man8/capable.8
+@@ -87,8 +87,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/compactsnoop.8 b/man/man8/compactsnoop.8
+index a2933d7a..c1339579 100644
+--- a/man/man8/compactsnoop.8
++++ b/man/man8/compactsnoop.8
+@@ -173,7 +173,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Wenbo Zhang
+diff --git a/man/man8/cpudist.8 b/man/man8/cpudist.8
+index 6ee1f3bf..979f0451 100644
+--- a/man/man8/cpudist.8
++++ b/man/man8/cpudist.8
+@@ -99,8 +99,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/cpuunclaimed.8 b/man/man8/cpuunclaimed.8
+index 674be499..107ff67b 100644
+--- a/man/man8/cpuunclaimed.8
++++ b/man/man8/cpuunclaimed.8
+@@ -98,8 +98,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/criticalstat.8 b/man/man8/criticalstat.8
+index cdd5e8ed..8f918707 100644
+--- a/man/man8/criticalstat.8
++++ b/man/man8/criticalstat.8
+@@ -65,8 +65,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Joel Fernandes
+ .SH SEE ALSO
+diff --git a/man/man8/dbslower.8 b/man/man8/dbslower.8
+index e39b8bd0..e73b77f1 100644
+--- a/man/man8/dbslower.8
++++ b/man/man8/dbslower.8
+@@ -72,8 +72,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein, Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/dbstat.8 b/man/man8/dbstat.8
+index c8e8fd8f..2ca31c67 100644
+--- a/man/man8/dbstat.8
++++ b/man/man8/dbstat.8
+@@ -64,8 +64,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/dcsnoop.8 b/man/man8/dcsnoop.8
+index 6ccb3b65..1d707ba1 100644
+--- a/man/man8/dcsnoop.8
++++ b/man/man8/dcsnoop.8
+@@ -69,8 +69,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/dcstat.8 b/man/man8/dcstat.8
+index e2bc4dc8..0501460f 100644
+--- a/man/man8/dcstat.8
++++ b/man/man8/dcstat.8
+@@ -53,8 +53,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/deadlock.8 b/man/man8/deadlock.8
+index 0be3f4ab..7300446a 100644
+--- a/man/man8/deadlock.8
++++ b/man/man8/deadlock.8
+@@ -136,7 +136,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Kenny Yu
+diff --git a/man/man8/dirtop.8 b/man/man8/dirtop.8
+index cc61a676..9a0fd3d9 100644
+--- a/man/man8/dirtop.8
++++ b/man/man8/dirtop.8
+@@ -105,8 +105,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Erwan Velu
+ .SH INSPIRATION
+diff --git a/man/man8/drsnoop.8 b/man/man8/drsnoop.8
+index 572c0dce..3563da81 100644
+--- a/man/man8/drsnoop.8
++++ b/man/man8/drsnoop.8
+@@ -104,7 +104,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Wenbo Zhang
+diff --git a/man/man8/execsnoop.8 b/man/man8/execsnoop.8
+index e42ad38a..9daaf4b1 100644
+--- a/man/man8/execsnoop.8
++++ b/man/man8/execsnoop.8
+@@ -141,8 +141,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/exitsnoop.8 b/man/man8/exitsnoop.8
+index 86a43921..c37e1caf 100644
+--- a/man/man8/exitsnoop.8
++++ b/man/man8/exitsnoop.8
+@@ -102,8 +102,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Arturo Martin-de-Nicolas
+ .SH SEE ALSO
+diff --git a/man/man8/ext4dist.8 b/man/man8/ext4dist.8
+index 61ecb727..ba17fc3d 100644
+--- a/man/man8/ext4dist.8
++++ b/man/man8/ext4dist.8
+@@ -72,8 +72,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/ext4slower.8 b/man/man8/ext4slower.8
+index a16bd5ef..b6276269 100644
+--- a/man/man8/ext4slower.8
++++ b/man/man8/ext4slower.8
+@@ -105,8 +105,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/filelife.8 b/man/man8/filelife.8
+index 9495d4e2..6438b374 100644
+--- a/man/man8/filelife.8
++++ b/man/man8/filelife.8
+@@ -64,8 +64,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/fileslower.8 b/man/man8/fileslower.8
+index fe912436..d567986b 100644
+--- a/man/man8/fileslower.8
++++ b/man/man8/fileslower.8
+@@ -106,8 +106,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/filetop.8 b/man/man8/filetop.8
+index ba0cbd6e..1f818d68 100644
+--- a/man/man8/filetop.8
++++ b/man/man8/filetop.8
+@@ -111,8 +111,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH INSPIRATION
+diff --git a/man/man8/funccount.8 b/man/man8/funccount.8
+index 16ce4fc0..1c7b71c1 100644
+--- a/man/man8/funccount.8
++++ b/man/man8/funccount.8
+@@ -104,8 +104,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg, Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/funcinterval.8 b/man/man8/funcinterval.8
+index 89a4a7b4..c9e1f31a 100755
+--- a/man/man8/funcinterval.8
++++ b/man/man8/funcinterval.8
+@@ -106,8 +106,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Edward Wu
+ .SH SEE ALSO
+diff --git a/man/man8/funclatency.8 b/man/man8/funclatency.8
+index b82626cf..3c8e248e 100644
+--- a/man/man8/funclatency.8
++++ b/man/man8/funclatency.8
+@@ -127,8 +127,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg, Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/funcslower.8 b/man/man8/funcslower.8
+index 06f17934..0e85989d 100644
+--- a/man/man8/funcslower.8
++++ b/man/man8/funcslower.8
+@@ -117,8 +117,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/gethostlatency.8 b/man/man8/gethostlatency.8
+index a9d18e07..876f3983 100644
+--- a/man/man8/gethostlatency.8
++++ b/man/man8/gethostlatency.8
+@@ -55,8 +55,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/hardirqs.8 b/man/man8/hardirqs.8
+index 8e7237a9..9e6975c9 100644
+--- a/man/man8/hardirqs.8
++++ b/man/man8/hardirqs.8
+@@ -87,8 +87,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/inject.8 b/man/man8/inject.8
+index 2ab80dbb..85b36b6e 100644
+--- a/man/man8/inject.8
++++ b/man/man8/inject.8
+@@ -112,9 +112,5 @@ example usage, output, and commentary for this tool.
+ Linux
+ 
+ 
+-.SH STABILITY
+-Unstable - in development.
+-
+-
+ .SH AUTHOR
+ Howard McLauchlan
+diff --git a/man/man8/killsnoop.8 b/man/man8/killsnoop.8
+index acb376ea..2543b6a6 100644
+--- a/man/man8/killsnoop.8
++++ b/man/man8/killsnoop.8
+@@ -82,8 +82,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/klockstat.8 b/man/man8/klockstat.8
+index 0a3167d1..57f9db18 100644
+--- a/man/man8/klockstat.8
++++ b/man/man8/klockstat.8
+@@ -182,8 +182,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH CREDITS
+ This tool is based on work of David Valin <dvalin@redhat.com> and his script.
+ .SH AUTHOR
+diff --git a/man/man8/llcstat.8 b/man/man8/llcstat.8
+index 36dbed7d..2b554c46 100644
+--- a/man/man8/llcstat.8
++++ b/man/man8/llcstat.8
+@@ -63,8 +63,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Teng Qin
+ .SH SEE ALSO
+diff --git a/man/man8/mdflush.8 b/man/man8/mdflush.8
+index 9d10ca87..3c3b9bba 100644
+--- a/man/man8/mdflush.8
++++ b/man/man8/mdflush.8
+@@ -49,8 +49,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/memleak.8 b/man/man8/memleak.8
+index 2fd26764..d56cf207 100644
+--- a/man/man8/memleak.8
++++ b/man/man8/memleak.8
+@@ -135,7 +135,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+diff --git a/man/man8/mountsnoop.8 b/man/man8/mountsnoop.8
+index 01efdf9c..8afafba0 100644
+--- a/man/man8/mountsnoop.8
++++ b/man/man8/mountsnoop.8
+@@ -46,8 +46,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Omar Sandoval
+ .SH SEE ALSO
+diff --git a/man/man8/mysqld_qslower.8 b/man/man8/mysqld_qslower.8
+index 5753079a..7daf074b 100644
+--- a/man/man8/mysqld_qslower.8
++++ b/man/man8/mysqld_qslower.8
+@@ -58,8 +58,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/netqtop.8 b/man/man8/netqtop.8
+index bfa34d11..8750782b 100644
+--- a/man/man8/netqtop.8
++++ b/man/man8/netqtop.8
+@@ -50,7 +50,5 @@ Also look in the bcc distribution for a netqtop_example.txt file containing
+ example usage, output and commentary for this tool.
+ .SH OS 
+ Linux
+-.SH STABILITY
+-Unstable - in development
+ .SH AUTHOR
+ Yolandajn
+diff --git a/man/man8/nfsdist.8 b/man/man8/nfsdist.8
+index c72cfaa6..34532c18 100644
+--- a/man/man8/nfsdist.8
++++ b/man/man8/nfsdist.8
+@@ -72,8 +72,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Samuel Nair
+ .SH SEE ALSO
+diff --git a/man/man8/nfsslower.8 b/man/man8/nfsslower.8
+index 22b36e3e..66021002 100644
+--- a/man/man8/nfsslower.8
++++ b/man/man8/nfsslower.8
+@@ -114,8 +114,6 @@ Also look in the bcc distribution for a companion nfsslower_examples.txt file co
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Samuel Nair
+ .SH SEE ALSO
+diff --git a/man/man8/offcputime.8 b/man/man8/offcputime.8
+index be5387b9..270991d8 100644
+--- a/man/man8/offcputime.8
++++ b/man/man8/offcputime.8
+@@ -110,8 +110,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/offwaketime.8 b/man/man8/offwaketime.8
+index 7334b6f8..f0704e92 100644
+--- a/man/man8/offwaketime.8
++++ b/man/man8/offwaketime.8
+@@ -107,8 +107,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/oomkill.8 b/man/man8/oomkill.8
+index b6d6f9e1..965ba545 100644
+--- a/man/man8/oomkill.8
++++ b/man/man8/oomkill.8
+@@ -47,8 +47,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/opensnoop.8 b/man/man8/opensnoop.8
+index fee83263..953af623 100644
+--- a/man/man8/opensnoop.8
++++ b/man/man8/opensnoop.8
+@@ -148,8 +148,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/pidpersec.8 b/man/man8/pidpersec.8
+index 2164ffaf..9d272c81 100644
+--- a/man/man8/pidpersec.8
++++ b/man/man8/pidpersec.8
+@@ -33,8 +33,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/profile.8 b/man/man8/profile.8
+index 30871afe..8523a731 100644
+--- a/man/man8/profile.8
++++ b/man/man8/profile.8
+@@ -148,8 +148,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/readahead.8 b/man/man8/readahead.8
+index a2a10914..da8e4fe4 100644
+--- a/man/man8/readahead.8
++++ b/man/man8/readahead.8
+@@ -51,8 +51,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Suchakra Sharma
+ .SH SEE ALSO
+diff --git a/man/man8/reset-trace.8 b/man/man8/reset-trace.8
+index e96d4790..90f525e0 100644
+--- a/man/man8/reset-trace.8
++++ b/man/man8/reset-trace.8
+@@ -53,7 +53,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+diff --git a/man/man8/runqlat.8 b/man/man8/runqlat.8
+index d535ebbf..9e146a5e 100644
+--- a/man/man8/runqlat.8
++++ b/man/man8/runqlat.8
+@@ -105,8 +105,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/runqlen.8 b/man/man8/runqlen.8
+index b36a5a18..c2f0ffb4 100644
+--- a/man/man8/runqlen.8
++++ b/man/man8/runqlen.8
+@@ -78,8 +78,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/runqslower.8 b/man/man8/runqslower.8
+index f8b5f008..c72389d7 100644
+--- a/man/man8/runqslower.8
++++ b/man/man8/runqslower.8
+@@ -81,8 +81,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Ivan Babrou, original BCC Python version
+ Andrii Nakryiko, CO-RE version
+diff --git a/man/man8/shmsnoop.8 b/man/man8/shmsnoop.8
+index e7092e19..944e9f07 100644
+--- a/man/man8/shmsnoop.8
++++ b/man/man8/shmsnoop.8
+@@ -66,8 +66,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Jiri Olsa
+ .SH SEE ALSO
+diff --git a/man/man8/slabratetop.8 b/man/man8/slabratetop.8
+index bfe897fc..18d1e5ea 100644
+--- a/man/man8/slabratetop.8
++++ b/man/man8/slabratetop.8
+@@ -68,8 +68,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/sofdsnoop.8 b/man/man8/sofdsnoop.8
+index cd3ffa27..94432544 100644
+--- a/man/man8/sofdsnoop.8
++++ b/man/man8/sofdsnoop.8
+@@ -58,5 +58,3 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+diff --git a/man/man8/softirqs.8 b/man/man8/softirqs.8
+index a9a14414..df2fc90b 100644
+--- a/man/man8/softirqs.8
++++ b/man/man8/softirqs.8
+@@ -85,8 +85,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHORS
+ Brendan Gregg, Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/solisten.8 b/man/man8/solisten.8
+index 4d8ffe95..fd863447 100644
+--- a/man/man8/solisten.8
++++ b/man/man8/solisten.8
+@@ -45,5 +45,3 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+diff --git a/man/man8/spfdsnoop.8 b/man/man8/spfdsnoop.8
+index ffad57c5..df80437f 100644
+--- a/man/man8/spfdsnoop.8
++++ b/man/man8/spfdsnoop.8
+@@ -77,8 +77,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Jiri Olsa
+ .SH SEE ALSO
+diff --git a/man/man8/sslsniff.8 b/man/man8/sslsniff.8
+index 7b945b00..b23f4c68 100644
+--- a/man/man8/sslsniff.8
++++ b/man/man8/sslsniff.8
+@@ -43,8 +43,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHORS
+ Adrian Lopez and Mark Drayton
+ .SH SEE ALSO
+diff --git a/man/man8/stackcount.8 b/man/man8/stackcount.8
+index d2459561..2cf789c1 100644
+--- a/man/man8/stackcount.8
++++ b/man/man8/stackcount.8
+@@ -150,8 +150,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg, Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/statsnoop.8 b/man/man8/statsnoop.8
+index c0555043..d1560b3c 100644
+--- a/man/man8/statsnoop.8
++++ b/man/man8/statsnoop.8
+@@ -83,8 +83,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/swapin.8 b/man/man8/swapin.8
+index c5ef1ffc..89600460 100644
+--- a/man/man8/swapin.8
++++ b/man/man8/swapin.8
+@@ -50,8 +50,6 @@ Also look in the bcc distribution for a companion _examples.txt file
+ containing example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/syncsnoop.8 b/man/man8/syncsnoop.8
+index 8543f213..cd7b0629 100644
+--- a/man/man8/syncsnoop.8
++++ b/man/man8/syncsnoop.8
+@@ -45,8 +45,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/syscount.8 b/man/man8/syscount.8
+index d13793be..88343e14 100644
+--- a/man/man8/syscount.8
++++ b/man/man8/syscount.8
+@@ -102,8 +102,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/tcpaccept.8 b/man/man8/tcpaccept.8
+index 603a5ca4..4e7dfc9e 100644
+--- a/man/man8/tcpaccept.8
++++ b/man/man8/tcpaccept.8
+@@ -104,8 +104,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcpconnect.8 b/man/man8/tcpconnect.8
+index 55105709..7c1740a4 100644
+--- a/man/man8/tcpconnect.8
++++ b/man/man8/tcpconnect.8
+@@ -183,8 +183,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcpconnlat.8 b/man/man8/tcpconnlat.8
+index 9c810071..236f0fb0 100644
+--- a/man/man8/tcpconnlat.8
++++ b/man/man8/tcpconnlat.8
+@@ -111,8 +111,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcpdrop.8 b/man/man8/tcpdrop.8
+index 12806472..a2e2860c 100644
+--- a/man/man8/tcpdrop.8
++++ b/man/man8/tcpdrop.8
+@@ -65,8 +65,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcplife.8 b/man/man8/tcplife.8
+index a2419c61..a2a2550c 100644
+--- a/man/man8/tcplife.8
++++ b/man/man8/tcplife.8
+@@ -122,8 +122,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcpretrans.8 b/man/man8/tcpretrans.8
+index 0ac82afa..04226dc6 100644
+--- a/man/man8/tcpretrans.8
++++ b/man/man8/tcpretrans.8
+@@ -83,8 +83,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcprtt.8 b/man/man8/tcprtt.8
+index 729a1abb..e934102a 100644
+--- a/man/man8/tcprtt.8
++++ b/man/man8/tcprtt.8
+@@ -78,8 +78,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ zhenwei pi
+ .SH SEE ALSO
+diff --git a/man/man8/tcpstates.8 b/man/man8/tcpstates.8
+index 26c7a8a1..d93c198d 100644
+--- a/man/man8/tcpstates.8
++++ b/man/man8/tcpstates.8
+@@ -123,8 +123,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcpsubnet.8 b/man/man8/tcpsubnet.8
+index 525b8082..daf41583 100644
+--- a/man/man8/tcpsubnet.8
++++ b/man/man8/tcpsubnet.8
+@@ -90,8 +90,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Rodrigo Manyari
+ .SH INSPIRATION
+diff --git a/man/man8/tcpsynbl.8 b/man/man8/tcpsynbl.8
+index 4dd38c8a..93c353b1 100644
+--- a/man/man8/tcpsynbl.8
++++ b/man/man8/tcpsynbl.8
+@@ -51,8 +51,6 @@ Also look in the bcc distribution for a companion _examples.txt file
+ containing example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tcptop.8 b/man/man8/tcptop.8
+index e636f456..633b0c93 100644
+--- a/man/man8/tcptop.8
++++ b/man/man8/tcptop.8
+@@ -113,8 +113,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH INSPIRATION
+diff --git a/man/man8/tcptracer.8 b/man/man8/tcptracer.8
+index d2346c77..893604d6 100644
+--- a/man/man8/tcptracer.8
++++ b/man/man8/tcptracer.8
+@@ -99,8 +99,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Iago López Galeiras
+ .SH SEE ALSO
+diff --git a/man/man8/threadsnoop.8 b/man/man8/threadsnoop.8
+index 3c655f24..007281ad 100644
+--- a/man/man8/threadsnoop.8
++++ b/man/man8/threadsnoop.8
+@@ -52,8 +52,6 @@ Also look in the bcc distribution for a companion _examples.txt file
+ containing example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/tplist.8 b/man/man8/tplist.8
+index da5edf37..f7e459da 100644
+--- a/man/man8/tplist.8
++++ b/man/man8/tplist.8
+@@ -56,7 +56,5 @@ This is from bcc.
+ https://github.com/iovisor/bcc
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+diff --git a/man/man8/trace.8 b/man/man8/trace.8
+index e4f06fc7..7b68d833 100644
+--- a/man/man8/trace.8
++++ b/man/man8/trace.8
+@@ -210,7 +210,5 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+diff --git a/man/man8/ttysnoop.8 b/man/man8/ttysnoop.8
+index 9f37aaa9..36eb75d1 100644
+--- a/man/man8/ttysnoop.8
++++ b/man/man8/ttysnoop.8
+@@ -52,8 +52,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/ucalls.8 b/man/man8/ucalls.8
+index dfc4b8b2..be38c9fb 100644
+--- a/man/man8/ucalls.8
++++ b/man/man8/ucalls.8
+@@ -90,8 +90,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/uflow.8 b/man/man8/uflow.8
+index 1d0951c3..d8800166 100644
+--- a/man/man8/uflow.8
++++ b/man/man8/uflow.8
+@@ -90,8 +90,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/ugc.8 b/man/man8/ugc.8
+index 782ae634..5dd17f3a 100644
+--- a/man/man8/ugc.8
++++ b/man/man8/ugc.8
+@@ -90,8 +90,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/uobjnew.8 b/man/man8/uobjnew.8
+index f4a9c74c..5cd7ef1b 100644
+--- a/man/man8/uobjnew.8
++++ b/man/man8/uobjnew.8
+@@ -80,8 +80,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/ustat.8 b/man/man8/ustat.8
+index 371d855e..f37fc91f 100644
+--- a/man/man8/ustat.8
++++ b/man/man8/ustat.8
+@@ -125,8 +125,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/uthreads.8 b/man/man8/uthreads.8
+index 6acffa56..5a91f2d4 100644
+--- a/man/man8/uthreads.8
++++ b/man/man8/uthreads.8
+@@ -60,8 +60,6 @@ Also look in the bcc distribution for a companion _example.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Sasha Goldshtein
+ .SH SEE ALSO
+diff --git a/man/man8/vfscount.8 b/man/man8/vfscount.8
+index febbc9e6..0cc65adf 100644
+--- a/man/man8/vfscount.8
++++ b/man/man8/vfscount.8
+@@ -54,8 +54,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/vfsstat.8 b/man/man8/vfsstat.8
+index 929e6b63..f439857e 100644
+--- a/man/man8/vfsstat.8
++++ b/man/man8/vfsstat.8
+@@ -57,8 +57,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/virtiostat.8 b/man/man8/virtiostat.8
+index 8578f8d3..ac312c56 100644
+--- a/man/man8/virtiostat.8
++++ b/man/man8/virtiostat.8
+@@ -58,8 +58,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ zhenwei pi
+ .SH SEE ALSO
+diff --git a/man/man8/wakeuptime.8 b/man/man8/wakeuptime.8
+index 8630ae4a..3c7cf80a 100644
+--- a/man/man8/wakeuptime.8
++++ b/man/man8/wakeuptime.8
+@@ -96,8 +96,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/xfsdist.8 b/man/man8/xfsdist.8
+index 3c890007..75b2c66e 100644
+--- a/man/man8/xfsdist.8
++++ b/man/man8/xfsdist.8
+@@ -72,8 +72,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/xfsslower.8 b/man/man8/xfsslower.8
+index 30ec3253..c914dcee 100644
+--- a/man/man8/xfsslower.8
++++ b/man/man8/xfsslower.8
+@@ -105,8 +105,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/zfsdist.8 b/man/man8/zfsdist.8
+index 1e5632fd..6c5de7d7 100644
+--- a/man/man8/zfsdist.8
++++ b/man/man8/zfsdist.8
+@@ -75,8 +75,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+diff --git a/man/man8/zfsslower.8 b/man/man8/zfsslower.8
+index d1e2f9c1..31d382f6 100644
+--- a/man/man8/zfsslower.8
++++ b/man/man8/zfsslower.8
+@@ -108,8 +108,6 @@ Also look in the bcc distribution for a companion _examples.txt file containing
+ example usage, output, and commentary for this tool.
+ .SH OS
+ Linux
+-.SH STABILITY
+-Unstable - in development.
+ .SH AUTHOR
+ Brendan Gregg
+ .SH SEE ALSO
+-- 
+2.30.2
+
